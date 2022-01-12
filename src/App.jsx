@@ -1,22 +1,18 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import '@/assets/App.less'
-import Home from '@/pages/home'
-import { Button } from 'antd'
+import Login from '@/pages/user/login'
+import NotFound from '@/pages/404'
+import Layout from '@/Layout/BaseLayout'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          <Button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </Button>
-        </p>
-        <Home/>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/' element={<Layout/>}></Route>
+        <Route path='/*' element={<NotFound/>}></Route>
+      </Routes>
+    </Router>
   )
 }
 
