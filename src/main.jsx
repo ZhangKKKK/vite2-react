@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import '@/assets/index.css'
 import App from './App'
 import './mock'
-import '@/redux/index'
 
 ReactDOM.render(
   <React.StrictMode>

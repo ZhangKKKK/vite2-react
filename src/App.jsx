@@ -1,5 +1,5 @@
 import '@/assets/App.less'
-import RouterConfig from '@/router/routerConfig'
+import RouterConfig from '@/router/routerConfigTest'
 
 function App() {
   return (

@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-
 import { NOT_FOUND_ROUTES, LOGIN_ROUTES, dynamicRoutes } from '@/router/index'
 import { useEffect, useState } from 'react'
 import store from '@/redux'
+import Layout from '@/Layout/BaseLayout'
 
 const routes = dynamicRoutes.concat(NOT_FOUND_ROUTES)
 
 function RouterConfig() {
   console.log(store.getState())
-  const isLogin = store.getState().token
+  const isLogin = !!store.getState().token
   console.log('登录？', isLogin)
   useEffect(() => {
     console.log('isLogin发生改变', isLogin)

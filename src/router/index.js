@@ -10,19 +10,13 @@ export const LOGIN_ROUTES = [
     name: 'login',
     component: Login
   },
-  {
-    path: '*',
-    name: 'redirect',
-    redirect: '/login'
-  }
+  // {
+  //   path: '*',
+  //   name: 'redirect',
+  //   redirect: '/login'
+  // }
 ]
 export const dynamicRoutes = [
-  {
-    path: '/',
-    name: 'home',
-    meta: { title: '首页', hidden: false },
-    redirect: '/form'
-  },
   {
     path: '/form',
     name: 'form',
