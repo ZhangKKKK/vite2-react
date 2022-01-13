@@ -1,5 +1,6 @@
 import React from 'react'
 import { Layout, Menu, Breadcrumb } from 'antd';
+import { Outlet } from 'react-router-dom';
 
 const { Header, Content, Footer } = Layout;
 
@@ -22,7 +23,9 @@ export default class BaseLayout extends React.Component {
             <Breadcrumb.Item>List</Breadcrumb.Item>
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
-          <div className="site-layout-content" style={{ minHeight: 'calc(100vh - 185px)', background: '#fff', borderRadius: '6px', padding: '16px' }}>Content</div>
+          <div className="site-layout-content" style={{ minHeight: 'calc(100vh - 185px)', background: '#fff', borderRadius: '6px', padding: '16px' }}>
+            <Outlet/>
+          </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
       </Layout>
