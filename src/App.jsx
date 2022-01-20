@@ -1,11 +1,11 @@
 import '@/assets/App.less'
-import RouterConfig from '@/router/routerConfigTest'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
-    <>
-      <RouterConfig />
-    </>    
+    <div className='app'>
+      <Outlet/>
+    </div>    
   )
 }
 

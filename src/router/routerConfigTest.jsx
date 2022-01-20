@@ -3,6 +3,7 @@ import { NOT_FOUND_ROUTES, LOGIN_ROUTES, dynamicRoutes } from '@/router/index'
 import { useEffect, useState } from 'react'
 import store from '@/redux'
 import Layout from '@/Layout/BaseLayout'
+import App from '@/App'
 import Login from '@/pages/user/login'
 import FormBasic from '@/pages/form/basic'
 import FormHeight from '@/pages/form/height'
@@ -17,13 +18,15 @@ function RouterConfig() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Layout/>}>
-          <Route path='' element={<FormBasic/>}></Route>
-          <Route path='form/basic' element={<FormBasic/>}></Route>
-          <Route path='/form/height' element={<FormHeight/>}></Route>
-          <Route path='*' element={<NotFound/>}></Route>
+        <Route path='/' element={<App />}>
+          <Route path='/' element={<Layout/>}>
+            <Route index element={<FormBasic/>}></Route>
+            <Route path='form/basic' element={<FormBasic/>}></Route>
+            <Route path='form/height' element={<FormHeight/>}></Route>
+            <Route path='*' element={<NotFound/>}></Route>
+          </Route>
+          <Route path="/login" element={<Login />} />
         </Route>
-        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   )
